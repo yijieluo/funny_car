@@ -21,5 +21,5 @@
     2、通过yaw角度或电机编码器，实现转向环 速度 的闭环控制。增加 前进 和 转向 的位置控制。（前面的都是速度控制）    
     3、增加树莓派做图像处理的一些工作。
 
-#### [整理的博客](https://github.com/iamluoyijie/funny_car)
+#### [整理的博客](https://www.cnblogs.com/luoyijie/p/11433817.html)
 #### [演示视频1](https://v.youku.com/v_show/id_XNDMzNzExODMyMA==.html) [演示视频2](https://v.youku.com/v_show/id_XNDMzNzExODMxNg==.html)
