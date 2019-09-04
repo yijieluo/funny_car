@@ -22,8 +22,6 @@ extern moto_measure_t moto_chassis[2];
 
 int main(void)
 {
- 		rt_err_t ret = RT_EOK;
-	
 		/*can设备初始化*/
 		can_dev = rt_device_find(CAN1_DEVICE_NAME);
 		if (!can_dev)

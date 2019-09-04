@@ -71,7 +71,7 @@ rt_err_t mpu6050_init(void)
 	//其实手册的那个表里面，MPU_CFG_REG，设置为0的话，陀螺仪是8kHz，加速度是1kHz的采样率，更高，这样就是不使用低通滤波器。
 	//看网上的一些说法，这个低通滤波器是滤掉高频噪声，那实际角度变化的频率肯定不能超过这个频率（超过了就不能用mpu6050了），但是设置了
 	//5.5ms更新数据有点低，不设置的话就是3.8ms（其实也好不到哪里去）
-	//所以后续的pid控制周期要是小于3.8ms就没意义了，打算设置4ms。
+	//所以后续的pid控制周期要是小于3.8ms就没意义了。
 	
 	rt_uint8_t read_value = 0;
 	mpu6050_read_byte(i2c_bus, MPU_DEVICE_ID_REG, &read_value);
@@ -84,7 +84,7 @@ rt_err_t mpu6050_init(void)
 	mpu6050_write_byte(i2c_bus, MPU_PWR_MGMT2_REG, 0X00);
 	
 	mpu6050_write_byte(i2c_bus, MPU_SAMPLE_RATE_REG, 8000/samplae_rate -1);
-	mpu6050_write_byte(i2c_bus, MPU_CFG_REG, 1);//不设置低通滤波
+	mpu6050_write_byte(i2c_bus, MPU_CFG_REG, 0);
 	return RT_EOK;
 }
 void gy86_init(void)
